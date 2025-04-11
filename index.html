@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Mental Health Status Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" class="form-control" name="age" required>
+            </div>
+            <div class="form-group">
+                <label>Social Media Usage Without Purpose (1-5):</label>
+                <input type="number" class="form-control" name="sm_usage_without_purpose" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Social Media Distraction (1-5):</label>
+                <input type="number" class="form-control" name="sm_distraction" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Restlessness Without Social Media (1-5):</label>
+                <input type="number" class="form-control" name="restless_without_sm" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Easily Distracted (1-5):</label>
+                <input type="number" class="form-control" name="easily_distracted" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Bothered By Worries (1-5):</label>
+                <input type="number" class="form-control" name="bothered_by_worries" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Difficulty to Concentrate (1-5):</label>
+                <input type="number" class="form-control" name="difficult_to_concentrate" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Compare Yourself to Others on Social Media (1-5):</label>
+                <input type="number" class="form-control" name="compare_to_others" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Seek Validation from Social Media (1-5):</label>
+                <input type="number" class="form-control" name="seek_validation" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Feel Depressed or Down (1-5):</label>
+                <input type="number" class="form-control" name="feel_depressed" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Interest Fluctuation in Daily Activities (1-5):</label>
+                <input type="number" class="form-control" name="interest_fluctuation" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label>Sleep Issues (1-5):</label>
+                <input type="number" class="form-control" name="sleep_issues" min="1" max="5" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict Mental Health Status</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

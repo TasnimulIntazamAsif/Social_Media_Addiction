@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+        .alert {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .good {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .moderate {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .poor {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Mental Health Prediction Result</h1>
+        <div class="alert {% if prediction == 'Good' %}good{% elif prediction == 'Moderate' %}moderate{% else %}poor{% endif %}">
+            <h3>Your Mental Health Status: {{ prediction }}</h3>
+            {% if prediction == 'Good' %}
+            <p>Great job! Your mental health appears to be in good condition. Continue your healthy habits.</p>
+            {% elif prediction == 'Moderate' %}
+            <p>Your mental health is in moderate condition. Consider implementing some self-care strategies.</p>
+            {% else %}
+            <p>Your mental health may need attention. Consider speaking with a mental health professional.</p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <h4>Recommendations:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Practice mindfulness and meditation</li>
+                <li class="list-group-item">Maintain a regular sleep schedule</li>
+                <li class="list-group-item">Limit social media usage</li>
+                <li class="list-group-item">Exercise regularly</li>
+                <li class="list-group-item">Connect with friends and family</li>
+            </ul>
+        </div>
+        <a href="/" class="btn btn-primary btn-lg">Make Another Prediction</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
