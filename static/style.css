@@ -30,9 +30,25 @@ body {
     border-radius: 5px;
 }
 
+#result {
+    transition: all 0.3s ease;
+}
+
 .alert {
     border-radius: 5px;
     padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-heading {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.alert hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .alert-success {
@@ -45,4 +61,9 @@ body {
     background-color: #f8d7da;
     border-color: #f5c6cb;
     color: #721c24;
+}
+
+#resultMessage {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
