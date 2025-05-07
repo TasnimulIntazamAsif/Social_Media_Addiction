@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Result | Social Media Mental Health</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="animated-box"></div>
+        <div class="animated-box"></div>
+        <div class="animated-box"></div>
+        <div class="animated-box"></div>
+        <div class="animated-box"></div>
+    </div>
+
+    <div class="container result-container">
+        <h1>Your Assessment Results</h1>
+        
+        <div class="result-card">
+            <div class="result-status {{ 'result-status-good' if 'Not Addicted' in result.status else 'result-status-warning' if 'Error' not in result.status else 'result-status-error' }}">
+                <h2>{{ result.status }}</h2>
+                <div class="confidence">Confidence: {{ result.confidence }}</div>
+            </div>
+            
+            <div class="result-details">
+                <h3>What This Means:</h3>
+                <p>{{ result.advice }}</p>
+                
+                <div class="recommendations">
+                    <h3>Recommendations:</h3>
+                    {% if 'Not Addicted' in result.status %}
+                        <ul>
+                            <li>Continue to maintain a healthy balance with social media</li>
+                            <li>Be mindful of your screen time</li>
+                            <li>Take regular breaks from social media</li>
+                            <li>Focus on real-life social interactions</li>
+                        </ul>
+                    {% elif 'Error' in result.status %}
+                        <ul>
+                            <li>Please try taking the assessment again</li>
+                            <li>Make sure to answer all questions</li>
+                            <li>Contact the administrator if the problem persists</li>
+                        </ul>
+                    {% else %}
+                        <ul>
+                            <li>Consider setting daily time limits for social media use</li>
+                            <li>Try digital detox for a few days</li>
+                            <li>Turn off notifications to reduce the urge to check</li>
+                            <li>Replace social media time with offline activities</li>
+                            <li>Speak with a mental health professional if you're concerned</li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/" class="btn-primary">Take Assessment Again</a>
+            <a href="#" class="btn-secondary" id="printResult">Print Results</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
