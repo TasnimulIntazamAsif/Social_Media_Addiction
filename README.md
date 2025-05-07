@@ -11,7 +11,7 @@ This project analyzes the relationship between social media usage patterns and m
 
 ![Image](https://github.com/user-attachments/assets/5cef1424-74da-4378-a3a3-353806e2443a)
 
-
+![Image](https://github.com/user-attachments/assets/75a865b6-5e13-405c-839d-f20e188aef21)
 
 ## Project Structure
 - `SMMH.ipynb`: Main Jupyter notebook containing data analysis, preprocessing, and model development
