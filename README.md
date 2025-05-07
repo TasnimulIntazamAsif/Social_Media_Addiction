@@ -10,6 +10,7 @@ This project analyzes the relationship between social media usage patterns and m
 - Comprehensive data visualizations showing correlations between social media usage and mental health indicators
 
 ![Image](https://github.com/user-attachments/assets/e3dcbb7f-19ed-4705-b650-7560ddf8b834)
+![Image](https://github.com/user-attachments/assets/c64b984c-f2cd-4ed5-a927-a99abaf67ef6)
 
 ## Project Structure
 - `SMMH.ipynb`: Main Jupyter notebook containing data analysis, preprocessing, and model development
