@@ -8,7 +8,7 @@ This project analyzes the relationship between social media usage patterns and m
 - Machine learning models to predict mental health status
 - Interactive web application for users to input their social media usage habits and receive mental health assessments
 - Comprehensive data visualizations showing correlations between social media usage and mental health indicators
-
+  Follow this link for better demonstration: https://www.linkedin.com/posts/asif2896_social-media-addiction-mental-health-activity-7325887377606914049-UQ8X?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFWZn0wBy8amgZ5P_rDmimf7Ku_0ah84sCg
 ![Image](https://github.com/user-attachments/assets/e3dcbb7f-19ed-4705-b650-7560ddf8b834)
 ![Image](https://github.com/user-attachments/assets/c64b984c-f2cd-4ed5-a927-a99abaf67ef6)
 ![Image](https://github.com/user-attachments/assets/eba453af-2e04-4a46-b110-38aba6c69e91)
