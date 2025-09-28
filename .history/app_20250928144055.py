@@ -9,23 +9,33 @@ import warnings
 warnings.filterwarnings('ignore')
 app = Flask(__name__)
 
-# Load the model safely
+# Load the improved model safely
 try:
-    model = joblib.load('model.joblib')
-    print("Model loaded successfully using joblib")
+    # Try to load the improved ensemble model first
+    model = joblib.load('improved_ensemble_model.joblib')
+    scaler = joblib.load('improved_scaler.joblib')
+    print("Improved ensemble model loaded successfully!")
 except Exception as e:
     try:
-        # Try loading with pickle as fallback
-        with open('model.joblib', 'rb') as f:
-            model = pickle.load(f)
-        print("Model loaded successfully using pickle")
+        # Fallback to original model
+        model = joblib.load('model.joblib')
+        scaler = None
+        print("Original model loaded successfully (improved model not found)")
     except Exception as e:
-        print(f"Error loading model: {e}")
-        # Create a simple fallback model that always predicts 0 (not addicted)
-        from sklearn.ensemble import RandomForestClassifier
-        model = RandomForestClassifier()
-        model.fit(np.random.rand(10, 18), np.random.randint(0, 2, 10))
-        print("Warning: Using fallback model")
+        try:
+            # Try loading with pickle as fallback
+            with open('model.joblib', 'rb') as f:
+                model = pickle.load(f)
+            scaler = None
+            print("Model loaded successfully using pickle")
+        except Exception as e:
+            print(f"Error loading model: {e}")
+            # Create a simple fallback model that always predicts 0 (not addicted)
+            from sklearn.ensemble import RandomForestClassifier
+            model = RandomForestClassifier()
+            model.fit(np.random.rand(10, 18), np.random.randint(0, 2, 10))
+            scaler = None
+            print("Warning: Using fallback model")
 
 @app.route('/')
 def home():
