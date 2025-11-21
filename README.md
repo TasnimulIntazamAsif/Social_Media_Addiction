@@ -1,4 +1,4 @@
-# Social Media Addiction and Mental Health Predictor
+# Social Media Addiction and Mental Health Predictor#
 
 ## Overview
 This project analyzes the relationship between social media usage patterns and mental health indicators. It uses machine learning techniques to identify correlations between social media habits and mental health metrics, and provides a prediction tool to assess potential mental health impacts based on social media usage.
